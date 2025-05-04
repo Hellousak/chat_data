@@ -98,7 +98,7 @@ fig = px.choropleth(
     locationmode="country names",
     color="count",
     color_continuous_scale="Blues",
-    title="Výskyt podle zemí"
+    title="Chats according to the region."
 )
 st.plotly_chart(fig, use_container_width=True)
 
