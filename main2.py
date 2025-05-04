@@ -88,8 +88,8 @@ df['categorized_tags'] = df['tags'].apply(categorize_tags)
 country_counts = df["session_country_name"].value_counts().reset_index()
 country_counts.columns = ["session_country_name", "count"]
 
-st.title("🌍 Mapa zemí a tagů")
-st.markdown("Zobraz mapu podle zemí. Po výběru země uvidíš nejčastější tagy dle kategorií.")
+st.title("🌍 The map of the chat users.")
+st.markdown("Click on the map to see the numbers. Select the country to see the most common topics.")
 
 # Mapa světa
 fig = px.choropleth(
@@ -103,10 +103,10 @@ fig = px.choropleth(
 st.plotly_chart(fig, use_container_width=True)
 
 # Výběr země
-selected_country = st.selectbox("Vyber zemi:", sorted(df["session_country_name"].unique()))
+selected_country = st.selectbox("Select the country:", sorted(df["session_country_name"].unique()))
 
 if selected_country:
-    st.subheader(f"📊 Výběr kategorie tagů pro {selected_country}")
+    st.subheader(f"📊 The chat topics for {selected_country}")
     tags_list = df[df["session_country_name"] == selected_country]["categorized_tags"]
 
     # Sčítáme výskyty tagů v jednotlivých kategoriích
@@ -116,12 +116,12 @@ if selected_country:
             tag_counter[category].extend(tags)
 
     available_categories = sorted(tag_counter.keys())
-    selected_category = st.selectbox("Vyber kategorii tagů:", available_categories)
+    selected_category = st.selectbox("Select the category:", available_categories)
 
     if selected_category:
         # Počet výskytů jednotlivých tagů v dané kategorii
         tag_freq = pd.Series(tag_counter[selected_category]).value_counts().head(15)
 
-        st.subheader(f"🔍 Nejčastější tagy v kategorii **{selected_category}** pro {selected_country}")
+        st.subheader(f"🔍 The topics in the selected category **{selected_category}** for {selected_country}")
         st.bar_chart(tag_freq)
 
