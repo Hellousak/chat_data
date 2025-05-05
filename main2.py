@@ -102,34 +102,33 @@ fig = px.choropleth(
 )
 st.plotly_chart(fig, use_container_width=True)
 
-# Výběr země
+## Výběr země
 countries = sorted(df["session_country_name"].unique())
 countries.insert(0, "All")  # Přidáme možnost "All" na začátek
 
 selected_country = st.selectbox("Select the country:", countries)
 
-
-if selected_country:
+# Zobrazení témat podle země (nebo všech zemí)
+if selected_country == "All":
+    tags_list = df["categorized_tags"]
+    st.subheader("📊 The chat topics for **all countries combined**")
+else:
+    tags_list = df[df["session_country_name"] == selected_country]["categorized_tags"]
     st.subheader(f"📊 The chat topics for {selected_country}")
-    if selected_country == "All":
-        tags_list = df["categorized_tags"]
-    else:
-        tags_list = df[df["session_country_name"] == selected_country]["categorized_tags"]
 
+# Sčítáme výskyty tagů v jednotlivých kategoriích
+tag_counter = defaultdict(list)
+for categories in tags_list:
+    for category, tags in categories.items():
+        tag_counter[category].extend(tags)
 
-    # Sčítáme výskyty tagů v jednotlivých kategoriích
-    tag_counter = defaultdict(list)
-    for categories in tags_list:
-        for category, tags in categories.items():
-            tag_counter[category].extend(tags)
+available_categories = sorted(tag_counter.keys())
+selected_category = st.selectbox("Select the category:", available_categories)
 
-    available_categories = sorted(tag_counter.keys())
-    selected_category = st.selectbox("Select the category:", available_categories)
+if selected_category:
+    # Počet výskytů jednotlivých tagů v dané kategorii
+    tag_freq = pd.Series(tag_counter[selected_category]).value_counts().head(15)
 
-    if selected_category:
-        # Počet výskytů jednotlivých tagů v dané kategorii
-        tag_freq = pd.Series(tag_counter[selected_category]).value_counts().head(15)
-
-        st.subheader(f"🔍 The topics in the selected category **{selected_category}** for {selected_country}")
-        st.bar_chart(tag_freq)
+    st.subheader(f"🔍 The topics in the selected category **{selected_category}** for {selected_country}")
+    st.bar_chart(tag_freq)
 
