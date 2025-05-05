@@ -103,11 +103,19 @@ fig = px.choropleth(
 st.plotly_chart(fig, use_container_width=True)
 
 # Výběr země
-selected_country = st.selectbox("Select the country:", sorted(df["session_country_name"].unique()))
+countries = sorted(df["session_country_name"].unique())
+countries.insert(0, "All")  # Přidáme možnost "All" na začátek
+
+selected_country = st.selectbox("Select the country:", countries)
+
 
 if selected_country:
     st.subheader(f"📊 The chat topics for {selected_country}")
-    tags_list = df[df["session_country_name"] == selected_country]["categorized_tags"]
+    if selected_country == "All":
+        tags_list = df["categorized_tags"]
+    else:
+        tags_list = df[df["session_country_name"] == selected_country]["categorized_tags"]
+
 
     # Sčítáme výskyty tagů v jednotlivých kategoriích
     tag_counter = defaultdict(list)
