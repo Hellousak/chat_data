@@ -95,7 +95,7 @@ st.markdown("Click on the map to see the numbers. Select the country to see the 
 # Mapa světa
 
 
-fig = go.Figure(data=go.Scattergeo(
+fig = go.Figure(data=go.Choropleth(
     locations=country_counts["session_country_name"],
     locationmode="country names",
     text=country_counts["count"],
