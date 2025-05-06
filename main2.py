@@ -106,7 +106,11 @@ st.plotly_chart(fig, use_container_width=True)
 fig = go.Figure(go.Scattergeo())
 fig.update_geos(projection_type="natural earth")
 fig.update_layout(height=300, margin={"r":0,"t":0,"l":0,"b":0})
+fig = px.line_geo(lat=[0,15,20,35], lon=[5,10,25,30])
+fig.update_geos(fitbounds="locations")
 fig.show()
+
+
 
 ## Výběr země
 countries = sorted(df["session_country_name"].unique())
