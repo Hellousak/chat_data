@@ -98,22 +98,24 @@ st.markdown("Click on the map to see the numbers. Select the country to see the 
 fig = go.Figure(data=go.Choropleth(
     locations=country_counts["session_country_name"],
     locationmode="country names",
-    text=country_counts["count"],
-    marker=dict(
-        size=10,
-        color=country_counts["count"],
-        colorscale="Blues",
-        colorbar_title="Count"
-    )
+    z=country_counts["count"],
+    colorscale="Blues",
+    colorbar_title="Count"
 ))
 
-fig.update_geos(projection_type="natural earth")
+fig.update_geos(
+    projection_type="natural earth",
+    showcountries=True,        # zobrazí hranice států
+    countrycolor="white"       # barva hranic
+)
 
 fig.update_layout(
     title="Chats according to the region.",
-    height=300,
+    height=500,
     margin={"r": 0, "t": 30, "l": 0, "b": 0}
 )
+
+st.plotly_chart(fig, use_container_width=True)
 
 st.plotly_chart(fig, use_container_width=True)
 ## Výběr země
