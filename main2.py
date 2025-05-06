@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import ast
+import plotly.graph_objects as go
 
 st.set_page_config(layout="wide")
 
@@ -92,16 +93,29 @@ st.title("🌍 The map of the chat users.")
 st.markdown("Click on the map to see the numbers. Select the country to see the most common topics.")
 
 # Mapa světa
-fig = px.choropleth(
-    country_counts,
-    locations="session_country_name",
-    locationmode="country names",
-    color="count",
-    color_continuous_scale="Blues",
-    title="Chats according to the region."
-)
-st.plotly_chart(fig, use_container_width=True)
 
+
+fig = go.Figure(data=go.Scattergeo(
+    locations=country_counts["session_country_name"],
+    locationmode="country names",
+    text=country_counts["count"],
+    marker=dict(
+        size=10,
+        color=country_counts["count"],
+        colorscale="Blues",
+        colorbar_title="Count"
+    )
+))
+
+fig.update_geos(projection_type="natural earth")
+
+fig.update_layout(
+    title="Chats according to the region.",
+    height=300,
+    margin={"r": 0, "t": 30, "l": 0, "b": 0}
+)
+
+st.plotly_chart(fig, use_container_width=True)
 ## Výběr země
 countries = sorted(df["session_country_name"].unique())
 countries.insert(0, "All")  # Přidáme možnost "All" na začátek
