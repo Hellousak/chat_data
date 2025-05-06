@@ -93,31 +93,21 @@ st.title("🌍 The map of the chat users.")
 st.markdown("Click on the map to see the numbers. Select the country to see the most common topics.")
 
 # Mapa světa
-
-
-fig = go.Figure(data=go.Choropleth(
-    locations=country_counts["session_country_name"],
+fig = px.choropleth(
+    country_counts,
+    locations="session_country_name",
     locationmode="country names",
-    z=country_counts["count"],
-    colorscale="Blues",
-    colorbar_title="Count"
-))
-
-fig.update_geos(
-    projection_type="natural earth",
-    showcountries=True,        # zobrazí hranice států
-    countrycolor="white"       # barva hranic
+    color="count",
+    color_continuous_scale="Blues",
+    title="Chats according to the region."
 )
-
-fig.update_layout(
-    title="Chats according to the region.",
-    height=500,
-    margin={"r": 0, "t": 30, "l": 0, "b": 0}
-)
-
 st.plotly_chart(fig, use_container_width=True)
 
-st.plotly_chart(fig, use_container_width=True)
+fig = go.Figure(go.Scattergeo())
+fig.update_geos(projection_type="natural earth")
+fig.update_layout(height=300, margin={"r":0,"t":0,"l":0,"b":0})
+fig.show()
+
 ## Výběr země
 countries = sorted(df["session_country_name"].unique())
 countries.insert(0, "All")  # Přidáme možnost "All" na začátek
