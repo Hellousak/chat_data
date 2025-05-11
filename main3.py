@@ -18,7 +18,7 @@ min_date = df['session_start_date'].min().date()  # získej minimální datum
 max_date = df['session_start_date'].max().date()  # získej maximální datum
 
 # 🎯 Date picker ve Streamlit sidebaru
-st.sidebar.markdown("## 📅 Vyber období")
+st.sidebar.markdown("## Select the date")
 start_date = st.sidebar.date_input("Od:", min_value=min_date, max_value=max_date, value=min_date)
 end_date = st.sidebar.date_input("Do:", min_value=min_date, max_value=max_date, value=max_date)
 
@@ -26,7 +26,7 @@ end_date = st.sidebar.date_input("Do:", min_value=min_date, max_value=max_date, 
 filtered_df = df[(df['session_start_date'].dt.date >= start_date) & (df['session_start_date'].dt.date <= end_date)]
 
 # Ukázka – výpis počtu řádků
-st.write(f"Zobrazeno {filtered_df.shape[0]} řádků z období {start_date} až {end_date}")
+st.write(f"**{filtered_df.shape[0]}** chats from {start_date} to {end_date}")
 
 
 
