@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="581dd8d1-8e22-4e1e-b3e2-1102ef768f81" name="Changes" comment="map edit1">
-      <change afterPath="$PROJECT_DIR$/reportv-16812456-AUCiFlJlv6y7to1P.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/main2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main3.py" beforeDir="false" afterPath="$PROJECT_DIR$/main3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reportv-16812456-cLnUE4byaeeI6INE.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="581dd8d1-8e22-4e1e-b3e2-1102ef768f81" name="Changes" comment="map edit1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,25 +18,20 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="helens &lt;helastekerova7@gmail.com&gt;" />
-      </list>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Hellousak&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Hellousak"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Hellousak/chat_data.git&quot;,
-    &quot;accountId&quot;: &quot;d8e17bff-7f07-476b-9287-99d344348415&quot;
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Hellousak/chat_data.git",
+    "accountId": "d8e17bff-7f07-476b-9287-99d344348415"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/main.py" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -55,22 +43,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.streamlit.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Helena/PycharmProjects/2n_chat/main3.py&quot;,
-    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/Helena/PycharmProjects/2n_chat/main3.py&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.main.executor": "Run",
+    "Python.main2.executor": "Run",
+    "Python.main3.executor": "Run",
+    "Python.streamlit.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Helena/PycharmProjects/2n_chat/main3.py",
+    "two.files.diff.last.used.file": "C:/Users/Helena/PycharmProjects/2n_chat/main3.py"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\HelenaŠtekerová-2N\PycharmProjects\chat_data" />
       <recent name="C:\Users\Helena\PycharmProjects\2n_chat" />
     </key>
   </component>
@@ -166,39 +153,7 @@
       <option name="project" value="LOCAL" />
       <updated>1746535564781</updated>
     </task>
-    <task id="LOCAL-00004" summary="map edit1">
-      <option name="closed" value="true" />
-      <created>1746535625056</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1746535625056</updated>
-    </task>
-    <task id="LOCAL-00005" summary="map edit1">
-      <option name="closed" value="true" />
-      <created>1746535752858</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1746535752858</updated>
-    </task>
-    <task id="LOCAL-00006" summary="map edit1">
-      <option name="closed" value="true" />
-      <created>1746535954238</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1746535954238</updated>
-    </task>
-    <task id="LOCAL-00007" summary="map edit1">
-      <option name="closed" value="true" />
-      <created>1746537202791</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1746537202791</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
