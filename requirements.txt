@@ -1,3 +1,5 @@
-streamlit
-pandas
-plotly
+streamlit~=1.45.0
+pandas~=2.2.3
+plotly~=6.0.1
+
+altair~=5.5.0
