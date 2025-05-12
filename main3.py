@@ -31,7 +31,7 @@ st.write(f"**{filtered_df.shape[0]}** chats from {start_date} to {end_date}")
 
 
 # Vyčištění dat
-df = df.dropna(subset=["session_country_name", "tags"])
+filtered_df = filtered_df.dropna(subset=["session_country_name", "tags"])
 
 def extract_tags(x):
     if isinstance(x, list):
@@ -60,7 +60,7 @@ prefix_mapping = {
 
 excluded_tags = {'lead', 'lead_h', 'None', 'ter', 'high', 'suspect_created', 'contact_updated', 'petr'}
 
-df["tags"] = df["tags"].apply(extract_tags)
+filtered_df["tags"] = filtered_df["tags"].apply(extract_tags)
 
 def categorize_tags(tagy):
     categorized_tags = defaultdict(list)
@@ -77,10 +77,10 @@ def categorize_tags(tagy):
         categorized_tags[category].append(tag)
     return categorized_tags
 
-df['categorized_tags'] = df['tags'].apply(categorize_tags)
+filtered_df['categorized_tags'] = filtered_df['tags'].apply(categorize_tags)
 
 # Mapa
-country_counts = df["session_country_name"].value_counts().reset_index()
+country_counts = filtered_df["session_country_name"].value_counts().reset_index()
 country_counts.columns = ["session_country_name", "count"]
 
 st.title("The map of the chat users.")
@@ -106,7 +106,7 @@ if selected_country == "All":
     tags_list = df["categorized_tags"]
     st.subheader("The chat topics for **all countries combined**")
 else:
-    tags_list = df[df["session_country_name"] == selected_country]["categorized_tags"]
+    tags_list = filtered_df[filtered_df["session_country_name"] == selected_country]["categorized_tags"]
     st.subheader(f"The chat topics for {selected_country}")
 
 # Počítání tagů
